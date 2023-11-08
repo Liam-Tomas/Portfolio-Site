@@ -1,0 +1,36 @@
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height:1.6;
+
+ }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  margin: none;
+  padding: none;
+  line-height: 1;
+}
+
+h2 {
+  margin: none;
+  padding: none;
+}
+
+h3 {
+  margin: none;
+  padding: none;
+  line-height: 1;
+}
+
+
