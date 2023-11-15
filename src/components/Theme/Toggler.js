@@ -9,8 +9,8 @@ const Toggle = ({ theme, toggleTheme }) => {
   return (
     <Button theme={theme} onClick={toggleTheme}>
       {theme === "light" ?
-        <FontAwesomeIcon icon={faSun} fontSize={'1rem'} /> :
-        <FontAwesomeIcon icon={faMoon} fontSize={'1rem'} />
+        <FontAwesomeIcon icon={faSun} fontSize={'1.3rem'} /> :
+        <FontAwesomeIcon icon={faMoon} fontSize={'1.3rem'}  />
       }
     </Button>
   );
