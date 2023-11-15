@@ -19,6 +19,7 @@ const StyledButton = styled.button`
   transition: transform 0.1s ease, background-color 0.1s ease, opacity 0.1s ease;
   box-shadow: rgba(50, 50, 93, 0.1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;  font-family: 'Inter', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   text-transform: uppercase;
   // Hover effect for the contained variant
   &:hover {

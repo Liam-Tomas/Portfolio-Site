@@ -114,7 +114,7 @@ function Home({ id }) {
       <MyName>Liam Armstrong</MyName>
       <SubTitle>Data Engineer / Analyst</SubTitle>
       <Description>
-        In my Computer Science journey at Oregon State, I've cultivated a passion for both software engineering and data analysis. My goal?
+        In my Computer Science journey at Oregon State, I've developed a keen interest in both software engineering and data analysis. My goal?
         To craft innovative software and insightful data-driven narratives. Check out some of my work below!
       </Description>
       <ButtonContainer>

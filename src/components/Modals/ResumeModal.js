@@ -11,12 +11,13 @@ const ResumeContent = styled.div`
   margin: 0 auto;
   padding: 2.5rem 3rem;
   color: ${props => props.theme.text};
-  background-color: ${props => props.theme.background};
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   z-index: 3001; // A value greater than SpotlightStyled's z-index
-  
+  max-width: 950px;
+  max-height: 90vh;
   ${media.lessThan("medium")`
     padding: 1.5rem 1.5rem;
+    max-height: 80vh;
 
   `};
   

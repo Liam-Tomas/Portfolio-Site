@@ -13,13 +13,14 @@ const ModalOverlay = styled.div`
   align-items: center;
   z-index: 2000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  
 `;
 
 const ModalContent = styled.div`
-  background: ${props => props.theme.card};
+  background-color: ${props => props.theme.background};
   border-radius: 5px;
-  max-width: 950px;
-  max-height: 90vh;
+  // max-width: 950px;
+  max-height: 100vh;
   overflow-y: auto;
 `;
 

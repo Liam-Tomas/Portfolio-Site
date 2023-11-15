@@ -13,17 +13,17 @@ const CodeEditorContainer = styled.div`
   background-color: ${props => props.theme.card};
   border-radius: 5px;
   padding: 10px;
-  width:570px; // Set your desired width here
-  height: 390px; // Set your desired height here
+  width:580px; 
+  height: 420px; 
   overflow: hidden; 
-  text-align: left !important;
+  // text-align: left !important;
   position: relative;
   /* Add more styling as needed */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
   ${media.lessThan("medium")`
     width: 100%;
-    height: 300px; 
+    height: 250px; 
   `};
 
 `;
@@ -75,21 +75,22 @@ const StyledPre = styled.pre`
     white-space: inherit;
     color: ${props => props.theme.textCode};
 
-
   }
   
   &.line-numbers .line-numbers-rows {
     position: absolute;
     pointer-events: none;
     top: 0;
-    
+    color:red !important;
     font-size: 100%;
     left: -3em;
     width: em; /* Adjust the width of line numbers area */
     letter-spacing: -1px;
     border: 0;
   }
-
+  &.line-numbers .line-numbers-rows span {
+    color: red !important; // Replace 'red' with your desired color
+  }
   /* Force the scrollbar to be visible */
 
 
@@ -100,9 +101,10 @@ const StyledPre = styled.pre`
 
 const StyledCode = styled.code`
   display: block;
-  font-size:.75rem !important;
+  font-size:.7rem !important;
   text-align: left !important;
   padding-right: 35px !important;
+  padding-left: 10px;
   white-space: pre-wrap;
   background-color: #0f172a !important;
   background-color: ${props => props.theme.card} !important;
