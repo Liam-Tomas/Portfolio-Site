@@ -46,7 +46,7 @@ const HeaderTitle = styled.h2`
 `
 
 const MyName = styled.h1`
-  font-size:4rem;
+  font-size:3.9rem;
   line-height: 1;
   font-weight: 900;
   // letter-spacing: -1px;
@@ -58,12 +58,11 @@ const MyName = styled.h1`
 `;
 
 const SubTitle = styled.h2`
-font-size:4rem;
-line-height: .9;
+  font-size:3.9rem;
+  line-height: .9;
   font-weight: 800;
   color: ${props => props.theme.textGrey};
-    font-size:3.8rem;
-    // letter-spacing: -1px;
+\    // letter-spacing: -1px;
   ${media.lessThan("medium")`
       font-size:2.4rem;
   `};
