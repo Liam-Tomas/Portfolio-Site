@@ -43,7 +43,7 @@ const ProjectsHeading = styled.h1`
 const ProjectsGrid = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 180px;
+    gap: 120px;
 `;
 
 const ProjectCard = styled.div`
@@ -277,7 +277,7 @@ const Projects = ({ id }) => {
                     </ProjectCard>
 
                     <SeeMoreContainer>
-                        <Button variant="">See More</Button>
+                        <Button href="https://github.com/Liam-Tomas" variant="outlined">See More</Button>
                     </SeeMoreContainer>
 
                 </ProjectsGrid>

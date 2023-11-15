@@ -23,7 +23,6 @@ const HomeContainer = styled.div`
 
   ${media.lessThan("medium")`
       max-height: 100%;
-      min-height: 100vh;
       padding: 0 2rem; // Reduced padding on smaller screens
       `};
 
