@@ -1,6 +1,7 @@
 // Footer.js
 import React from 'react';
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 const FooterContainer = styled.footer`
     width: 100%;
@@ -10,6 +11,10 @@ const FooterContainer = styled.footer`
     text-align: center;
     font-family: 'Roboto Mono', monospace;
     font-size: 14.5px;
+
+    ${media.lessThan("medium")`
+        font-size: .7rem;
+    `};
 `;
 
 const Year = new Date().getFullYear();

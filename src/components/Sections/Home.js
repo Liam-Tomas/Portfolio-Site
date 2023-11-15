@@ -39,7 +39,9 @@ const HeaderTitle = styled.h2`
   // margin: 5px 0px;
   color: ${props => props.theme.primary};
   font-family: 'Roboto Mono', monospace;
-
+  ${media.lessThan("medium")`
+    font-size:.9rem;
+  `};
 `
 
 const MyName = styled.h1`
@@ -50,7 +52,7 @@ const MyName = styled.h1`
 
   color: ${props => props.theme.text};
   ${media.lessThan("medium")`
-    font-size:2.5rem;
+    font-size:2.2rem;
   `};
 `;
 
@@ -62,7 +64,7 @@ line-height: .9;
     font-size:3.8rem;
     // letter-spacing: -1px;
   ${media.lessThan("medium")`
-      font-size:2.5rem;
+      font-size:2.2rem;
   `};
 `;
 
@@ -74,6 +76,7 @@ const Description = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: ${props => props.theme.textGrey};
   font-family: 'Inter', sans-serif;
+
   ${media.lessThan("medium")`
     font-size:1rem;
   `};
@@ -95,11 +98,7 @@ const ButtonContainer = styled.div`
     }
   }
 
-  ${media.lessThan("medium")`
-  display:flex;
-  flex-direction: column;`};
 
-  gap: 15px;
 `;
 
 const StyledButton = styled.button`

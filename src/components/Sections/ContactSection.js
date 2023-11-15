@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
 import ContactModal from '../Modals/ContactModal'
+import media from 'styled-media-query';
 
 const ContactWrapper = styled.section`
     display: flex;
@@ -15,10 +16,15 @@ const ContactWrapper = styled.section`
 `;
 
 const ContactHeading = styled.h1`
-    font-size: 2.8rem;
+    font-size: 3.8rem;
     color: ${props => props.theme.text};
     margin-bottom: 20px;
     font-weight:600;
+
+    ${media.lessThan("medium")`
+        font-size: 2.8rem;
+    `};
+
 `;
 
 const ContactDescription = styled.p`
@@ -26,7 +32,12 @@ const ContactDescription = styled.p`
     color: ${props => props.theme.textGrey};
     max-width: 600px;   // Optional: to prevent the paragraph from being too wide on large screens
     margin-bottom: 30px;
-    
+
+    ${media.lessThan("medium")`
+        font-size: 1rem;
+        padding: 0rem 2rem;
+    `};
+
 `;
 
 const ContactButton = styled(Button)`
@@ -37,9 +48,9 @@ function ContactSection({ id }) {
 
     return (
         <ContactWrapper id={id}>
-            <ContactHeading>Contact.</ContactHeading>
+            <ContactHeading>Contact</ContactHeading>
             <ContactDescription>
-                I am looking forward to new opportunities! Please feel free to reach out to me by email for any questions and I will get back to you in a timely manner :)
+                I am looking forward to new opportunities! Please reach out to me by email for any questions and I will get back to you in a timely manner :)
             </ContactDescription>
             {/* <ContactButton onClick={() => setContactModalOpen(true)}>
                 Say Hello!

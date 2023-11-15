@@ -21,12 +21,12 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin: 0 auto;
 
   ${media.lessThan("medium")`
+    // justify-content:center;
     gap:15px;
-    justify-content: center;
+    
   `};
 
 `;
@@ -40,10 +40,11 @@ const NavList = styled.ul`
   gap: .8rem; 
   align-items: center;
   font-size:1rem;
-
+  
   ${media.lessThan("medium")`
-  font-size:.9rem;
-`};
+    gap: 0rem; 
+
+  `};
 
 `;
 
@@ -63,6 +64,7 @@ const StyledLink = styled(Link)`
 
   ${media.lessThan("medium")`
     padding:0rem;
+    display: none;
   `};
 
 `;

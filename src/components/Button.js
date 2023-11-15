@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { ThemeContext } from 'styled-components';
-
+import media from 'styled-media-query';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledButton = styled.button`
@@ -35,6 +35,12 @@ const StyledButton = styled.button`
   &:active {
     transform: scale(0.97);
   }
+
+  ${media.lessThan("medium")`
+    font-size:.7rem;
+    padding: 8px 16px;
+
+`};
   
 `;
 

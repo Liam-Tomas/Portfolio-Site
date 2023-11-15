@@ -33,6 +33,12 @@ const ProjectsHeading = styled.h1`
     font-weight: 700;
     margin-bottom: 70px;
     color: ${props => props.theme.text};
+       
+    ${media.lessThan("medium")`
+        font-size: 3rem;
+        text-align:center;
+    `};
+
 `;
 
 const ProjectsGrid = styled.div`
@@ -78,7 +84,7 @@ const ProjectTitle = styled.h3`
     color: ${props => props.theme.text};
 
     ${media.lessThan("medium")`
-        font-size: 2.5rem;
+        font-size: 2rem;
     `};
 `;
 
@@ -86,9 +92,13 @@ const ProjectDescription = styled.p`
     font-size: 1.15rem;
     font-weight: 400;
     color: ${props => props.theme.textGrey};
-
-
-    `;
+    
+    ${media.lessThan("medium")`
+        font-size: 1rem;
+        padding: 0rem 1rem;
+    `};
+`;
+    
 
 const MainContent = styled.div`
     display:flex;
@@ -108,6 +118,7 @@ const TechContainer = styled.div`
 
     ${media.lessThan("medium")`
     justify-content: center;
+    padding: 0rem 1rem;
     `};
     `
 
@@ -121,6 +132,12 @@ const TechIcon = styled.div`
     color: ${props => props.theme.text};
     font-size: .8rem;
     padding: 3px 9px;
+
+    ${media.lessThan("medium")`
+    font-size: .7rem;
+    padding: 2px 7px;
+
+    `};
 `
 
 const ButtonContainer = styled.div`
