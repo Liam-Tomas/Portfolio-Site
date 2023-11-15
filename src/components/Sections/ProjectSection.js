@@ -39,7 +39,7 @@ const ProjectsHeading = styled.h1`
     font-weight: 700;
     min-width: 200px;
     color: ${props => props.theme.text};
-    margin-right: 20px; // Add some space between the heading and the line
+    margin-right: 0px; // Add some space between the heading and the line
     ${media.lessThan("medium")`
         font-size: 2.3rem;
         min-width: 160px;
