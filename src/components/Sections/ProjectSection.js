@@ -36,7 +36,6 @@ const ProjectsHeading = styled.h1`
        
     ${media.lessThan("medium")`
         font-size: 2.3rem;
-        text-align:center;
     `};
 
 `;
@@ -131,8 +130,8 @@ const TechIcon = styled.div`
     padding: 3px 9px;
 
     ${media.lessThan("medium")`
-    font-size: .7rem;
-    padding: 2px 7px;
+        font-size: .7rem;
+        padding: 2px 7px;
 
     `};
 `
@@ -146,7 +145,6 @@ const ButtonContainer = styled.div`
     font-weight:500;
 
     ${media.lessThan("medium")`
-    justify-content: center;
     `};
 `
 
