@@ -17,7 +17,7 @@ const StyledNav = styled.nav`
   z-index:50;
 
   ${media.lessThan("medium")`
-    padding: 1rem 1.5rem;
+    padding: 2rem 1.8rem;
   `};
 
   `;

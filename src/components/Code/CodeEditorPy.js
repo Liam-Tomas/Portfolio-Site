@@ -138,6 +138,11 @@ const StyledCode = styled.code`
   .token.punctuation {
     color: ${props => props.theme.text} /* Replace with the color you want */
   }
+
+  ${media.lessThan("medium")`
+    font-size:.65rem !important;
+  `};
+
   `;
 
   const CodeBlockPy = ({ code }) => {

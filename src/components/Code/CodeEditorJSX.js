@@ -141,7 +141,7 @@ const StyledCode = styled.code`
   }
     
   ${media.lessThan("medium")`
-    font-size:.5rem !important;
+    font-size:.65rem !important;
   `};
 
   `;

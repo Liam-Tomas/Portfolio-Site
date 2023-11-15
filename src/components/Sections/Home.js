@@ -23,7 +23,7 @@ const HomeContainer = styled.div`
 
   ${media.lessThan("medium")`
       max-height: 100%;
-      padding: 0 2rem; // Reduced padding on smaller screens
+      padding: 0 1.8rem; // Reduced padding on smaller screens
       `};
 
   ${media.greaterThan("large")`
@@ -109,7 +109,7 @@ function Home({ id }) {
     <HomeContainer id={id}>
       <HeaderTitle>Hi, my name is</HeaderTitle>
       <MyName>Liam Armstrong</MyName>
-      <SubTitle>Data Engineer / Analyst</SubTitle>
+      <SubTitle>Data & Web Enthusiast</SubTitle>
       <Description>
         In my Computer Science journey at Oregon State, I've developed a keen interest in both software engineering and data analysis. My goal?
         To craft innovative software and insightful data-driven narratives. Check out some of my work below!
