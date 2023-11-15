@@ -1,17 +1,17 @@
-// Projects.js
 import React from 'react';
 import styled from 'styled-components';
 import recipeIMG from '../../images/recipeappIMG.jpg';
 import ecommerceIMG from '../../images/ecommerceIMG.jpg'
 import spotifyIMG from '../../images/spotifyIMG.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faJs, faPython, faReact, faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import Button from '../Button'
 import media from 'styled-media-query';
 import { useTheme } from 'styled-components';
 import JSCode from '../Code/RecipeCode'; // Adjust the import path as necessary
 import EcommerceCode from '../Code/EcommerceCode';
 import AlgoCode from '../Code/AlgoCode';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-scroll';
 
 const ProjectsSection = styled.section`
     background-color: ${props => props.theme.background};
@@ -22,15 +22,15 @@ const ProjectsSection = styled.section`
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    max-width: 1150px;  // This will make sure the container doesn't expand beyond 1000px
+    max-width: 1180px;  // This will make sure the container doesn't expand beyond 1000px
     margin: 0 auto;     // This will center the container
     padding: 0 20px;    // This will add a little padding to ensure content doesn't touch the edges on smaller screens
     `;
 
 const ProjectsHeading = styled.h1`
-    font-size: 2.8rem;
-    font-weight: 600;
-    margin-bottom: 40px;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 70px;
     color: ${props => props.theme.text};
 
 `;
@@ -38,11 +38,12 @@ const ProjectsHeading = styled.h1`
 const ProjectsGrid = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 90px;
+    gap: 180px;
 `;
 
 const ProjectCard = styled.div`
     padding: 20px 0px;
+    gap:60px;
     // box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     display: flex;
@@ -55,13 +56,12 @@ const ProjectCard = styled.div`
         background-color: ${props => props.theme.cardLight};
         width: 100%; // Line width is 100% of the ProjectCard
         position: absolute;
-        bottom: -45px; // Move the line below the ProjectCard. Adjust this value as needed.
+        bottom: -90px; // Move the line below the ProjectCard. Adjust this value as needed.
         left: 0; // Align to the left of the ProjectCard
     }
     &.last::after {
         display: none;
     }
-    
 
     ${media.lessThan("medium")`
         flex-direction: column;
@@ -69,20 +69,9 @@ const ProjectCard = styled.div`
     `};
 `;
 
-const ProjectImage = styled.img`
-    height: auto; // Height will adjust to maintain aspect ratio
-    max-width: 400px; // Set a maximum height for all images
-    object-fit: cover;
-    object-position: center;  // This ensures the center of the image is always in the center of the container. Adjust as needed.
-    border-radius: 5px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    `;
-
-
 const ProjectTitle = styled.h3`
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 2.4rem;
+    font-weight: 600;
     line-height:1.2;
     color: ${props => props.theme.text};
 `;
@@ -98,18 +87,16 @@ const ProjectDescription = styled.p`
 
 const MainContent = styled.div`
     display:flex;
-    gap:14px;
-    justify-content:center;
+    gap:30px;
     flex-direction: column;
-    margin-left: 25px; // This creates a gap between the image and the main content.
 `
 
-const TechIcon = styled(FontAwesomeIcon)`
-    font-size: 45px;   // Adjust the size as needed
-    margin-right: 20px; // Spacing between icons
-    margin-top: 5px;
-    color: ${props => props.theme.primary};
-    `;
+// const TechIcon = styled(FontAwesomeIcon)`
+//     font-size: 45px;   // Adjust the size as needed
+//     margin-right: 20px; // Spacing between icons
+//     margin-top: 5px;
+//     color: ${props => props.theme.primary};
+//     `;
 
 const SeeMoreContainer = styled.div`
     display:flex;
@@ -123,51 +110,15 @@ const TechContainer = styled.div`
 
     `
 
-const ReactIcon = styled.div`
-    border: 1.5px solid #ab6800;
+const TechIcon = styled.div`
+    border: 1px solid #ab6800;
+    border: 1.5px solid ${props => props.theme.textGrey};
     border-radius: 25px;
-    color: #fff;
     font-weight:500;
     background-color: ${props => props.theme.icon1Color};
-    font-size: .65rem;
-    padding: 3px 9px;
-`
-
-const JavascriptIcon = styled.div`
-    border: 1.5px solid #94000d;
-    border-radius: 25px;
-    color: #fff;
-    font-weight:500;
-    background-color: ${props => props.theme.icon2Color};
-    font-size: .65rem;
-    padding: 3px 9px;
-`
-
-const ThirdIcon = styled.div`
-    border: 1.5px solid #19a251;
-    border-radius: 25px;
-    color: #fff;
-    font-weight:500;
-    background-color: ${props => props.theme.icon3Color};
-    font-size: .65rem;
-    padding: 3px 9px;
-`
-const FourthIcon = styled.div`
-    border: 1.5px solid #0059b2;
-    border-radius: 25px;
-    color: #fff;
-    font-weight:500;
-    background-color: ${props => props.theme.icon4Color};
-    font-size: .65rem;
-    padding: 3px 9px;
-`
-const FifthIcon = styled.div`
-    border: 1.5px solid #3b4a59;
-    border-radius: 25px;
-    color: #fff;
-    font-weight:500;
-    background-color: ${props => props.theme.icon5Color};
-    font-size: .65rem;
+    background-color: transparent;
+    color: ${props => props.theme.text};
+    font-size: .8rem;
     padding: 3px 9px;
 `
 
@@ -184,6 +135,12 @@ const Header = styled.div`
     display:flex;
 
 `
+const ProjectHeaderContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+`
+
 const StyledButton = styled(Button)`
 `
 
@@ -198,106 +155,114 @@ const Projects = ({ id }) => {
                     {/* Replace this part with a map function? */}
                     <ProjectCard>
                         {/* <ProjectImage src={recipeIMG} alt="Project Name" /> */}
-                        <JSCode />
                         <MainContent>
-                            <Header>
-                                <ProjectTitle>Recipe Finder App</ProjectTitle>
-                                {/* <ButtonContainer>
-                                    <a>Live Demo</a>
-                                    <a>Github</a>
-                                </ButtonContainer> */}
-                            </Header>
-                            <TechContainer>
-                                <ReactIcon>React</ReactIcon>
-                                <JavascriptIcon>Javascript</JavascriptIcon>
-                                <ThirdIcon>Mongodb</ThirdIcon>
-                                <FourthIcon>Node</FourthIcon>
-                                <FifthIcon>Express</FifthIcon>
-                            </TechContainer>
+                            <ProjectHeaderContainer>
+                                <ProjectTitle>Recipe Finder CRUD App</ProjectTitle>
+                                <TechContainer>
+                                    <TechIcon>React</TechIcon>
+                                    <TechIcon>Javascript</TechIcon>
+                                    <TechIcon>Mongodb</TechIcon>
+                                    <TechIcon>Node</TechIcon>
+                                    <TechIcon>Express</TechIcon>
+                                </TechContainer>
+                            </ProjectHeaderContainer>
                             <ProjectDescription>
-                                Developed a full-stack recipe platform with React.js and
-                                Express.js, featuring MongoDB, Spoonacular API search, user favorites,
-                                and authentication via Firebase. MUI and styled-components used for
-                                responsive UI design.
-                                {/* Designed and Implemented a web-based recipe platform w/ Express.js for backend operations
+                                Designed and Implemented a web-based recipe platform w/ Express.js for backend operations
                                 and React.js for UI. It employs MongoDB for data storage, with features like
-                                recipe creation, user favorites, and recipe searching through the Spoonacular API. Firebase facilitates
-                                user authentication, while styling and theming are achieved using MUI and styled-components. */}
+                                recipe creation, user favorites, and recipe search through the Spoonacular API. Firebase facilitates
+                                user authentication, while styling and theming are achieved using MUI and styled-components.
                             </ProjectDescription>
                             <ButtonContainer>
                                 <StyledButton
-                                    customPadding="8px 15px" // Adjust padding values to your needs
-                                    fontSize=".75rem"
+                                    href="https://recipe-finder-foodhub.netlify.app/"
+                                    customPadding="7px 22px"
+                                    fontSize=".8rem"
                                     btnColor={theme.btn2}
+                                    borderRadius='20px'
+
                                 >
-                                    Live Demo
+                                    Live
                                 </StyledButton>
                                 <StyledButton
-                                    customPadding="8px 15px"  // Adjust padding values to your needs
-                                    fontSize=".75rem"
+                                    href="https://github.com/Liam-Tomas/Recipe-Finder-App"
+                                    customPadding="7px 22px"
+                                    fontSize=".8rem"
+                                    borderRadius='20px'
+                                    icon={faGithub}
                                 >
                                     Github
                                 </StyledButton>
                             </ButtonContainer>
                         </MainContent>
+                        <JSCode />
+
                     </ProjectCard>
                     <ProjectCard>
-                        {/* <ProjectImage src={ecommerceIMG} alt="Project Name" /> */}
-                        <EcommerceCode />
                         <MainContent>
-                            <ProjectTitle>Ecommerce Analysis</ProjectTitle>
-                            <TechContainer>
-                                <ReactIcon>MySQL</ReactIcon>
-                                <JavascriptIcon>Python</JavascriptIcon>
-                                <ThirdIcon>Pandas</ThirdIcon>
-                                <FourthIcon>Tableu</FourthIcon>
-                                <FifthIcon>Excel</FifthIcon>
-                            </TechContainer>
+                            <ProjectHeaderContainer>
+                                <ProjectTitle>Ecommerce Analysis</ProjectTitle>
+                                <TechContainer>
+                                    <TechIcon>MySQL</TechIcon>
+                                    <TechIcon>Python</TechIcon>
+                                    <TechIcon>Pandas</TechIcon>
+                                    <TechIcon>Tableu</TechIcon>
+                                    <TechIcon>Excel</TechIcon>
+                                </TechContainer>
+                            </ProjectHeaderContainer>
                             <ProjectDescription>
                                 In-depth analysis of a dataset encompassing a year of sales from a UK-based online
                                 retail company specializing in all-occasion gifts. My analysis delved into sales patterns,
                                 customer behaviors, and inventory trends.
                             </ProjectDescription>
                             <ButtonContainer>
- 
-                                <Button fontSize=".75rem" customPadding="8px 15px" 
+                                <Button
+                                    href="https://github.com/Liam-Tomas/Ecommerce-Data-Analysis"
+                                    fontSize=".8rem"
+                                    customPadding="7px 22px"
+                                    icon={faGithub}
+                                    borderRadius='20px'
                                 >Github</Button>
                             </ButtonContainer>
                         </MainContent>
+                        <EcommerceCode />
                     </ProjectCard>
+
                     <ProjectCard className="last">
-                        {/* <ProjectImage src={spotifyIMG} alt="Project Name" /> */}
-                        <AlgoCode />
                         <MainContent>
-                            <ProjectTitle>Data Structures Portfolio</ProjectTitle>
-                            <TechContainer>
-                                <ReactIcon>Python</ReactIcon>
-                                <JavascriptIcon>Data Structures</JavascriptIcon>
-                                <FifthIcon>Algorithms</FifthIcon>
-                            </TechContainer>
+                            <ProjectHeaderContainer>
+
+                                <ProjectTitle>Data Structures Portfolio</ProjectTitle>
+                                <TechContainer>
+                                    <TechIcon>Python</TechIcon>
+                                    <TechIcon>Data Structures</TechIcon>
+                                    <TechIcon>Algorithms</TechIcon>
+                                </TechContainer>
+                            </ProjectHeaderContainer>
+
                             <ProjectDescription>
-                                Enhanced the Spotipy Python library's documentation by creating "authorization.rst" in the
+                                Studied and implemented a comprehensive set of data structures in Python as part of my computer science curriculum. This collection encompasses essential structures 
+                                such as Linked Lists, Stacks, and HashMaps, highlighting my hands-on experience with core algorithms and practical data manipulation techniques.
+                                {/* Enhanced the Spotipy Python library's documentation by creating "authorization.rst" in the
                                 /docs directory, which features clear explanations and practical examples of the Authorization
-                                Code Flow and Client Credentials Flow.
+                                Code Flow and Client Credentials Flow. */}
                             </ProjectDescription>
-                            {/* <div>
-                                    <TechIcon icon={faJs} title="JavaScript" />
-                                    <TechIcon icon={faPython} title="Python" />
-                                    <TechIcon icon={faReact} title="React" />
-                                    <TechIcon icon={faNodeJs} title="Node.js" />
-                                </div> */}
                             <ButtonContainer>
-                                <Button 
-                                fontSize=".75rem" 
-                                customPadding="8px 15px" 
+                                <Button
+                                    href="https://github.com/Liam-Tomas/Data-Structures-Portfolio"
+                                    fontSize=".75rem"
+                                    customPadding="7px 22px"
+                                    icon={faGithub}
+                                    borderRadius='20px'
                                 >Github</Button>
                             </ButtonContainer>
                         </MainContent>
+                        <AlgoCode />
                     </ProjectCard>
+
                     <SeeMoreContainer>
                         <Button variant="">See More</Button>
                     </SeeMoreContainer>
-                    {/* End of example card */}
+
                 </ProjectsGrid>
             </Container>
         </ProjectsSection >

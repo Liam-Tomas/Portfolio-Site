@@ -18,8 +18,8 @@ const ModalOverlay = styled.div`
 const ModalContent = styled.div`
   background: ${props => props.theme.card};
   border-radius: 5px;
-  max-width: 800px;
-  max-height: 80vh;
+  max-width: 950px;
+  max-height: 90vh;
   overflow-y: auto;
 `;
 

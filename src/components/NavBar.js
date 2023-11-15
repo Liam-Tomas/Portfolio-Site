@@ -229,17 +229,17 @@ const NavList = styled.ul`
 `;
 
 const StyledLink = styled(Link)`
-  color: ${props => props.theme.text}; // assuming this is your default text color
+  color: ${props => props.theme.text}; 
   transition: color 0.2s, transform 0.2s;
   padding:1rem;
   &:hover {
-    color: ${props => props.theme.primary}; // Define hoverText in your theme
+    color: ${props => props.theme.primary}; 
     transform: scale(1.05);
     cursor: pointer;
   }
 
   &.active {
-    color: ${props => props.theme.primary}; // Define activeText in your theme
+    color: ${props => props.theme.primary}; 
   }
 `;
 

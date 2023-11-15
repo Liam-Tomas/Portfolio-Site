@@ -1,8 +1,11 @@
 export const lightTheme = {
     name: 'light',
-    body: '#FFF',
+    
     primary: '#73bbc5',
     primary:'#0d9488',
+    primary:'#0f766e',
+    primary:'#0d9488',
+
     secondary: '#6000cb',
     text: '#0f1b61',
     text: '#000',
@@ -28,8 +31,11 @@ export const lightTheme = {
     // background: '#cbd5e1',
     hoverText: "#555",  // New! This will be the color on hover.
     activeText: "#777",
+    
     btn2: '#06b6d4',
-    btn3: '#a78bfa',
+    btn2:'#2563eb',
+    btn3: '#7c3aed',
+
     primaryFaded: '#0d948826',
     shadow: '0px 4px 10px rgba(13, 148, 136, 0.2)',
     backgroundFaded: '#e2e8f0d9',
@@ -79,7 +85,10 @@ export const darkTheme = {
     backgroundFaded: '#1e293bf5', // corrected color code
     backgroundFaded: '#0f172ae8',
     card: '#1e293b',
+
     background: '#0f172a',
+    // background: '#1e293b',
+    // card: '#334155',
     // background: '#0e1729',
     btnHover: 'rgba(255, 255, 255, 0.05)',
     btnHover: '#ff0000',

@@ -161,7 +161,7 @@ const HomeContainer = styled.div`
   max-width: 1020px;  // This will make sure the container doesn't expand beyond 1000px
   margin: 0 auto;     // This will center the container
   padding: 0 70px;    // This will add a little padding to ensure content doesn't touch the edges on smaller screens
-  gap: 18px;  // Adjust this value to your desired spacing
+  gap: 19px;  // Adjust this value to your desired spacing
   color: ${props => props.theme.textLight};
   z-index: 1000;
 
@@ -179,29 +179,31 @@ const HomeContainer = styled.div`
 const HeaderTitle = styled.h2`
   font-size: 1.15em;
   font-weight: 500;
-  margin: 5px 0px;
+  // margin: 5px 0px;
   color: ${props => props.theme.primary};
   font-family: 'Roboto Mono', monospace;
 
 `
 
 const MyName = styled.h1`
-  font-size:4.2rem;
+  font-size:4rem;
   line-height: 1;
-  font-weight: 800;
+  font-weight: 900;
+  // letter-spacing: -1px;
+
   color: ${props => props.theme.text};
   ${media.lessThan("medium")`
       font-size:3.1rem;
   `};
-
 `;
 
 const SubTitle = styled.h2`
-  font-size:4.2rem;
-  line-height: .9;
+font-size:4rem;
+line-height: .9;
   font-weight: 800;
   color: ${props => props.theme.textGrey};
-  
+    font-size:3.8rem;
+    // letter-spacing: -1px;
   ${media.lessThan("medium")`
       font-size:3.1rem;
   `};
@@ -249,10 +251,10 @@ function Home({ id }) {
     <HomeContainer id={id}>
       <HeaderTitle>Hi, my name is</HeaderTitle>
       <MyName>Liam Armstrong</MyName>
-      <SubTitle>Software / Data Engineer</SubTitle>
+      <SubTitle>Data Engineer / Analyst</SubTitle>
       <Description>
         In my Computer Science journey at Oregon State, I've cultivated a passion for both software engineering and data analysis. My goal?
-        Crafting innovative software and insightful data-driven narratives. Check out some of my work below!
+        To craft innovative software and insightful data-driven narratives. Check out some of my work below!
       </Description>
       <ButtonContainer>
         <Button
@@ -264,22 +266,22 @@ function Home({ id }) {
         </Button>
         <Button
           fontSize=".9rem"
-          variant="contained"
+          variant="outlined"
           href="https://www.linkedin.com/in/liam-tomas-armstrong/"
-          btnColor={theme.btn2}
+          // btnColor={theme.btn2}
           icon={faLinkedin}
           style={{ backgroundColor: "#fff" }}>
           LinkedIn
         </Button>
-        <Button
+        {/* <Button
           fontSize=".9rem"
-          variant="contained"
-          btnColor={theme.btn3}  // using the theme color directly
+          variant=""
+          // btnColor={theme.btn3}  // using the theme color directly
           icon={faEnvelope}
           onClick={() => setContactModalOpen(true)} // Open the contact modal
         >
           Contact
-        </Button>
+        </Button> */}
         <ContactModal
           isOpen={isContactModalOpen}
           onClose={() => setContactModalOpen(false)}

@@ -16,14 +16,14 @@ const CodeEditorContainer = styled.div`
   // background-color: #1e293b;
   border-radius: 5px;
   padding: 10px;
-  width:480px; // Set your desired width here
-  height: 280px; // Set your desired height here
+  width:570px; // Set your desired width here
+  height: 390px; // Set your desired height here
   overflow: hidden; 
   text-align: left !important;
   position: relative;
   /* Add more styling as needed */
-  border:.5px solid ${props => props.theme.textGrey};
-
+  // border:.5px solid ${props => props.theme.textGrey};
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 `;
 
 const CodeHeader = styled.div`

@@ -45,14 +45,17 @@ const EntrySubtitle = styled.p`
   font-family: 'Roboto', sans-serif;
 `;
 
-const EntryDescription = styled.p`
+const EntryDescription = styled.div`
   font-size: 16px;
   color: ${props => props.theme.textGrey};
   font-weight: 400;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-family: 'Roboto', sans-serif;
+  ul {
+    list-style: disc;
+    margin-left: 15px;
+  }
+`;
 
-  `;
 
 const DownloadLink = styled.a`
   display: inline-block;
@@ -93,8 +96,8 @@ const ResumeModal = ({ isOpen, onClose }) => {
             <Name>Liam Armstrong</Name>
             <DownloadLink href="https://drive.google.com/file/d/1C0T6wnw1AfNv5xQKVHRV7CH_n3r_C0bm/view?usp=sharing" download target="_blank" rel="noopener noreferrer">
               <Button>
-              {/* <FontAwesomeIcon icon={faDownload} /> */}
-                View PDF     
+                {/* <FontAwesomeIcon icon={faDownload} /> */}
+                View PDF
               </Button>
             </DownloadLink>
           </TitleHeader>
@@ -112,38 +115,54 @@ const ResumeModal = ({ isOpen, onClose }) => {
         <EntrySubtitle>Relevant Coursework: Statistics, Econometrics</EntrySubtitle>
         <EntryDescription></EntryDescription>
 
-        <SectionHeader>PROJECTS</SectionHeader>
-
-        <EntryTitle>Recipe Finder App</EntryTitle>
-        <EntrySubtitle>Technologies: Javascript, React, Mongodb, Node, Material UI</EntrySubtitle>
-        <EntryDescription>Developed a fully functional CRUD web app using React and Node.js. Allows users to create a profile, login, search through a large API of recipes, add recipes to their favorites, and create their own.</EntryDescription>
-
-        <EntryTitle>Ecommerce Data Analysis</EntryTitle>
-        <EntrySubtitle>Technologies: Python, Documentation, Open Source</EntrySubtitle>
-        <EntryDescription>Enhanced the Spotipy Python library's documentation by creating "authorization.rst" in the /docs directory, which features clear explanations and practical examples of the Authorization Code Flow and Client Credentials Flow. </EntryDescription>
-
         <SectionHeader>WORK EXPERIENCE</SectionHeader>
 
         <EntryTitle>American Federation of Teachers</EntryTitle>
         <EntrySubtitle>Policy Analyst</EntrySubtitle>
-        <EntryDescription>Conduct research and write briefing papers on various topics in education policy;
-          Attend and report on foreign policy forums and Congressional hearings;
-          Assist in developing civic education and teaching materials;
-          Assist in maintaining the International Affairs website, creating trainer contact database and distributing info regarding AFT international activities.
+        <EntryDescription>
+          <ul>
+            <li>Authored an official complaint to the UN Human Rights Council regarding global education disparities, contributing to the AFT's advocacy efforts in international education. The complaint advanced to the final stages of review and was underscored by the AFT president's presentation at the UN headquarters in Geneva.</li>
+            <li>Conducted in-depth analysis on international schooling systems and unions, leading to significant contributions to the AFT's annual report on global education trends.</li>
+            <li>Drafted critical resolutions on international teaching policy, influencing the union's stance on global issues.</li>
+            <li>Developed civic education materials and maintained AFT’s website, enhancing its educational utility.</li>
+          </ul>
         </EntryDescription>
 
         <EntryTitle>Nation Alliance on Mental Illness</EntryTitle>
         <EntrySubtitle>Helpline Specialist</EntrySubtitle>
-        <EntryDescription>Provide information and support for people suffering from a range of mental health conditions;
-          Responsibilities include guiding callers on where to find treatment, providing crisis counseling, helping navigate legal issues, assistance with securing disability, offering emotional support and more.
+
+        <EntryDescription>
+          <ul>
+            <li>Provided crisis counseling and support to over 300 callers monthly, guiding them through treatment, legal issues, emotional support and disability assistance.</li>
+            <li>Participated in a project to streamline the helpline's resources, enhancing response efficiency and improving caller satisfaction.</li>
+            <li>Led training for new helpline specialists, equipping them with essential skills in crisis counseling and support, and enhancing the team's efficiency and effectiveness in handling complex mental health cases.</li>
+          </ul>
         </EntryDescription>
 
+        {/*      !!!!!!   !!! PROJECT SECTION !!!  !!!! */}
+        <SectionHeader>PROJECTS</SectionHeader>
 
-        <SectionHeader>SKILLS</SectionHeader>
-
+        <EntryTitle>Recipe Finder App</EntryTitle>
+        <EntrySubtitle>Technologies: Javascript, React, Mongodb, Node, Material UI</EntrySubtitle>
+        <EntryDescription>
+          Developed a fully functional CRUD web app using React and Node.js. Allows users to create a profile, login, search through a large API of recipes, add recipes to their favorites, and create their own.
+        </EntryDescription>
+        <EntryTitle>Ecommerce Data Analysis</EntryTitle>
+        <EntrySubtitle>Technologies: SQL, MySQL, Python (pandas), Tableu, Excel</EntrySubtitle>
+        <EntryDescription>
+          Comprehensive analysis of an Ecommerce dataset to extract valuable insights, trends, and business intelligence.
+        </EntryDescription>
+        <SectionHeader>ADDITIONAL</SectionHeader>
         <EntryTitle></EntryTitle>
-        <EntrySubtitle>Python, Javascript, SQL, React, Node, MySQL, Mariadb, Tableu, PowerBI, Tailwind, Material UI,
-          Excel, Statistics, Mongodb, Express, Git, Github
+        <EntrySubtitle><b>Languages</b>: Javascript, Python, SQL, CSS, C++
+          Libraries/Frameworks/Tools: Pandas, Express.js, Node.js, Mongodb, Material UI, Node, Git/Github, Excel, Jira, PostgreSQL, MySQL, Tableau, PowerBI
+          Volunteer: Experience at home and abroad for various organizations including Amnesty International & more.
+        </EntrySubtitle>
+        <EntrySubtitle>
+          <b>Libraries/Frameworks/Tools</b>: Pandas, Express.js, Node.js, Mongodb, Material UI, Node, Git/Github, Excel, Jira, PostgreSQL, MySQL, Tableau, PowerBI
+        </EntrySubtitle>
+        <EntrySubtitle>
+          <b>Volunteer</b>: Experience at home and abroad for various organizations including Amnesty International & more.
         </EntrySubtitle>
         <EntryDescription> </EntryDescription>
 

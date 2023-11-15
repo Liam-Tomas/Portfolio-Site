@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Button from '../Button';  
+import Button from '../Button';
 import ContactModal from '../Modals/ContactModal'
 
 const ContactWrapper = styled.section`
@@ -12,7 +12,7 @@ const ContactWrapper = styled.section`
     background-color: none;
     text-align: center;   // Center the text within the elements
     z-index: 1000;
-`;  
+`;
 
 const ContactHeading = styled.h1`
     font-size: 2.8rem;
@@ -41,9 +41,14 @@ function ContactSection({ id }) {
             <ContactDescription>
                 I am looking forward to new opportunities! Please feel free to reach out to me by email for any questions and I will get back to you in a timely manner :)
             </ContactDescription>
-            <ContactButton onClick={() => setContactModalOpen(true)}>
+            {/* <ContactButton onClick={() => setContactModalOpen(true)}>
                 Say Hello!
-            </ContactButton>
+            </ContactButton> */}
+            <a href="mailto:ltarmstrong94@gmail.com">
+                <ContactButton>
+                    Say Hello!
+                </ContactButton>
+            </a>
             <ContactModal
                 isOpen={isContactModalOpen}
                 onClose={() => setContactModalOpen(false)}
