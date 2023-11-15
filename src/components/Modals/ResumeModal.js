@@ -94,7 +94,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
         <TitleSection>
           <TitleHeader>
             <Name>Liam Armstrong</Name>
-            <DownloadLink href="https://drive.google.com/file/d/1C0T6wnw1AfNv5xQKVHRV7CH_n3r_C0bm/view?usp=sharing" download target="_blank" rel="noopener noreferrer">
+            <DownloadLink href="https://docs.google.com/document/d/1lxr9E36t29hTLHcGc1PtM6k8tpWeK2wIVUVr9hDdDCA/edit?usp=sharing" download target="_blank" rel="noopener noreferrer">
               <Button>
                 {/* <FontAwesomeIcon icon={faDownload} /> */}
                 View PDF
