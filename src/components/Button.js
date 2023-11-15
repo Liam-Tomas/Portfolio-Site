@@ -37,8 +37,8 @@ const StyledButton = styled.button`
   }
 
   ${media.lessThan("medium")`
-    font-size:.7rem;
-    padding: 8px 16px;
+    // font-size:1rem;
+    // padding: 8px 16px;
 
 `};
   

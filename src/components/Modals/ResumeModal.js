@@ -2,6 +2,8 @@ import React from 'react';
 import Modal from './Modal';
 import styled from 'styled-components';
 import Button from '../Button'
+import media from 'styled-media-query';
+
 
 const ResumeContent = styled.div`
   width: 100%;
@@ -12,6 +14,12 @@ const ResumeContent = styled.div`
   background-color: ${props => props.theme.background};
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   z-index: 3001; // A value greater than SpotlightStyled's z-index
+  
+  ${media.lessThan("medium")`
+    padding: 1.5rem 1.5rem;
+
+  `};
+  
   `;
 
 const SectionHeader = styled.h1`
@@ -23,6 +31,8 @@ const SectionHeader = styled.h1`
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight:500;
+
+  
 `;
 
 const EntryTitle = styled.h2`
@@ -30,7 +40,6 @@ const EntryTitle = styled.h2`
   font-weight: 500;
   color: #555;
   margin-top: 10px;
-  
   color: ${props => props.theme.text};
 
 `;
@@ -71,13 +80,21 @@ const Name = styled.h1`
   font-size: 32px;
   color: ${props => props.theme.text};
 
+  ${media.lessThan("medium")`
+    font-size: 26px;
+  `};
+
 `;
 
 const Description = styled.p`
   color: ${props => props.theme.textGrey};
   font-weight: 400;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-`;
+  ${media.lessThan("medium")`
+    margin-top: 15px;
+
+  `};
+  `;
 
 const TitleHeader = styled.div`
     display: flex;

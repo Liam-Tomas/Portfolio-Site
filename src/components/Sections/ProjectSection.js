@@ -19,7 +19,7 @@ const Container = styled.div`
     flex-direction: column;
     max-width: 1180px;  // This will make sure the container doesn't expand beyond 1000px
     margin: 0 auto;     // This will center the container
-    padding: 0 20px;    // This will add a little padding to ensure content doesn't touch the edges on smaller screens
+    padding: 0 30px;    // This will add a little padding to ensure content doesn't touch the edges on smaller screens
    
     ${media.lessThan("medium")`
     flex-direction: column;
@@ -29,13 +29,13 @@ const Container = styled.div`
     `;
 
 const ProjectsHeading = styled.h1`
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 70px;
     color: ${props => props.theme.text};
        
     ${media.lessThan("medium")`
-        font-size: 3rem;
+        font-size: 2.3rem;
         text-align:center;
     `};
 
@@ -70,9 +70,8 @@ const ProjectCard = styled.div`
 
     ${media.lessThan("medium")`
         flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        text-align:center;
+        // align-content: center;
+        // justify-content: center;
 
         `};
 `;
@@ -84,7 +83,7 @@ const ProjectTitle = styled.h3`
     color: ${props => props.theme.text};
 
     ${media.lessThan("medium")`
-        font-size: 2rem;
+        font-size: 1.8rem;
     `};
 `;
 
@@ -95,7 +94,7 @@ const ProjectDescription = styled.p`
     
     ${media.lessThan("medium")`
         font-size: 1rem;
-        padding: 0rem 1rem;
+        padding: 0rem 0rem;
     `};
 `;
     
@@ -117,8 +116,6 @@ const TechContainer = styled.div`
     gap: 10px;
 
     ${media.lessThan("medium")`
-    justify-content: center;
-    padding: 0rem 1rem;
     `};
     `
 

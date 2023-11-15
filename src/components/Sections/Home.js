@@ -22,11 +22,10 @@ const HomeContainer = styled.div`
   z-index: 1000;
 
   ${media.lessThan("medium")`
-      text-align: center;
       max-height: 100%;
       min-height: 100vh;
-      padding: 0 50px; // Reduced padding on smaller screens
-  `};
+      padding: 0 2rem; // Reduced padding on smaller screens
+      `};
 
   ${media.greaterThan("large")`
   `};
@@ -39,9 +38,11 @@ const HeaderTitle = styled.h2`
   // margin: 5px 0px;
   color: ${props => props.theme.primary};
   font-family: 'Roboto Mono', monospace;
+
   ${media.lessThan("medium")`
-    font-size:.9rem;
+    font-size:1rem;
   `};
+  
 `
 
 const MyName = styled.h1`
@@ -52,7 +53,7 @@ const MyName = styled.h1`
 
   color: ${props => props.theme.text};
   ${media.lessThan("medium")`
-    font-size:2.2rem;
+    font-size:2.4rem;
   `};
 `;
 
@@ -64,7 +65,7 @@ line-height: .9;
     font-size:3.8rem;
     // letter-spacing: -1px;
   ${media.lessThan("medium")`
-      font-size:2.2rem;
+      font-size:2.4rem;
   `};
 `;
 

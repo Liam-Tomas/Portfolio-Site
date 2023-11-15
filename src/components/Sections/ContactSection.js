@@ -16,7 +16,7 @@ const ContactWrapper = styled.section`
 `;
 
 const ContactHeading = styled.h1`
-    font-size: 3.8rem;
+    font-size: 3rem;
     color: ${props => props.theme.text};
     margin-bottom: 20px;
     font-weight:600;

@@ -15,6 +15,11 @@ const StyledNav = styled.nav`
   box-shadow: ${props => (props.shadow ? "0 4px 15px rgba(0, 0, 0, 0.3)" : "none")};
   background-color: ${props => props.theme.backgroundFaded};
   z-index:50;
+
+  ${media.lessThan("medium")`
+    padding: 1rem 1.5rem;
+  `};
+
   `;
 
 const Container = styled.div`
@@ -24,9 +29,6 @@ const Container = styled.div`
   margin: 0 auto;
 
   ${media.lessThan("medium")`
-    // justify-content:center;
-    gap:15px;
-    
   `};
 
 `;
