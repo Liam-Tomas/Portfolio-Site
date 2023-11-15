@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components"
 export const GlobalStyles = createGlobalStyle`
     html {
+        font-size:16px;
+
     }
     body {
         font-family: 'Bitter', sans-serif;
@@ -9,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         line-height: ; // Adjust this as needed
+        font-size:16px;
     }
 
     html, body {

@@ -87,9 +87,7 @@ export const darkTheme = {
     card: '#1e293b',
 
     background: '#0f172a',
-    // background: '#1e293b',
-    // card: '#334155',
-    // background: '#0e1729',
+
     btnHover: 'rgba(255, 255, 255, 0.05)',
     btnHover: '#ff0000',
     projectHover: 'rgba(250, 250, 250, 0.05)',

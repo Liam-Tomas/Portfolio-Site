@@ -5,17 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button'
 
-const StyledButton = styled(Button)`
-  `;
-
 const Toggle = ({ theme, toggleTheme }) => {
   return (
-    <StyledButton theme={theme} onClick={toggleTheme}>
+    <Button theme={theme} onClick={toggleTheme}>
       {theme === "light" ?
-        <FontAwesomeIcon icon={faSun} /> :
-        <FontAwesomeIcon icon={faMoon} />
+        <FontAwesomeIcon icon={faSun} fontSize={'1rem'} /> :
+        <FontAwesomeIcon icon={faMoon} fontSize={'1rem'} />
       }
-    </StyledButton>
+    </Button>
   );
 };
 

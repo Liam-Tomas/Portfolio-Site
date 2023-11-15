@@ -15,9 +15,9 @@ const HomeContainer = styled.div`
   // background-color: ${props => props.theme.background};
   color: ${props => props.theme.text};
   max-width: 1020px;  // This will make sure the container doesn't expand beyond 1000px
-  margin: 0 auto;     // This will center the container
-  padding: 0 70px;    // This will add a little padding to ensure content doesn't touch the edges on smaller screens
-  gap: 19px;  // Adjust this value to your desired spacing
+  margin: 0 auto;     // Center the container
+  padding: 0 70px;    // Adds padding to ensure content doesn't touch the edges on smaller screens
+  gap: 19px;
   color: ${props => props.theme.textLight};
   z-index: 1000;
 
@@ -61,7 +61,8 @@ const SubTitle = styled.h2`
   line-height: .9;
   font-weight: 800;
   color: ${props => props.theme.textGrey};
-\    // letter-spacing: -1px;
+  // letter-spacing: -1px;
+
   ${media.lessThan("medium")`
       font-size:2.4rem;
   `};
@@ -70,9 +71,7 @@ const SubTitle = styled.h2`
 
 const Description = styled.div`
   font-size: 1.15rem;
-  // max-width: 680px;
   font-weight: 400;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: ${props => props.theme.textGrey};
   font-family: 'Inter', sans-serif;
 
@@ -96,8 +95,6 @@ const ButtonContainer = styled.div`
         margin-right: 0; // to remove margin from the last button
     }
   }
-
-
 `;
 
 const StyledButton = styled.button`

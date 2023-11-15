@@ -16,13 +16,12 @@ const ContactWrapper = styled.section`
 `;
 
 const ContactHeading = styled.h1`
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: ${props => props.theme.text};
     margin-bottom: 20px;
-    font-weight:600;
+    font-weight:700;
 
     ${media.lessThan("medium")`
-        font-size: 2.8rem;
     `};
 
 `;

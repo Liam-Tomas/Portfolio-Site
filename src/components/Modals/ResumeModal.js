@@ -17,7 +17,7 @@ const ResumeContent = styled.div`
   max-height: 90vh;
   ${media.lessThan("medium")`
     padding: 1.5rem 1.5rem;
-    max-height: 80vh;
+    max-height: 70vh;
 
   `};
   

@@ -28,22 +28,39 @@ const Container = styled.div`
 `};
     `;
 
-const ProjectsHeading = styled.h1`
-    font-size: 3rem;
-    font-weight: 700;
+const ProjectsHeadingContainer = styled.div`
+    display: flex;
+    align-items: center;
     margin-bottom: 70px;
+`;
+
+const ProjectsHeading = styled.h1`
+    font-size: 2.5rem;
+    font-weight: 700;
+    min-width: 200px;
     color: ${props => props.theme.text};
-       
+    margin-right: 20px; // Add some space between the heading and the line
     ${media.lessThan("medium")`
         font-size: 2.3rem;
-    `};
+        min-width: 160px;
 
+    `};
 `;
+
+const HorizontalLine = styled.div`
+    width: 82.5%;
+    height: 2.5px;
+    border-radius:10px;
+    background-color: ${props => props.theme.cardLight}; 
+    
+    ${media.lessThan("medium")`
+    `};
+    `;
 
 const ProjectsGrid = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 120px;
+    gap: 150px;
 `;
 
 const ProjectCard = styled.div`
@@ -56,12 +73,12 @@ const ProjectCard = styled.div`
     &::after {
         content: ''; // Required for pseudo-elements
         display: block;
-        height: 2px; // Height of the line
+        height: 2px; // Height of line
         background-color: ${props => props.theme.cardLight};
         width: 100%; // Line width is 100% of the ProjectCard
         position: absolute;
-        bottom: -90px; // Move the line below the ProjectCard. Adjust this value as needed.
-        left: 0; // Align to the left of the ProjectCard
+        bottom: -75px; // Moves line below the ProjectCard. Adjust this value as needed.
+        left: 0; // Aligns to left of the ProjectCard
     }
     &.last::after {
         display: none;
@@ -76,11 +93,10 @@ const ProjectCard = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-    font-size: 2.4rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     line-height:1.2;
     color: ${props => props.theme.text};
-
     ${media.lessThan("medium")`
         font-size: 1.8rem;
     `};
@@ -96,7 +112,7 @@ const ProjectDescription = styled.p`
         padding: 0rem 0rem;
     `};
 `;
-    
+
 
 const MainContent = styled.div`
     display:flex;
@@ -167,7 +183,10 @@ const Projects = ({ id }) => {
     return (
         <ProjectsSection id={id}>
             <Container>
-                <ProjectsHeading>My Work</ProjectsHeading>
+                <ProjectsHeadingContainer>
+                    <ProjectsHeading>My Work</ProjectsHeading>
+                    <HorizontalLine />
+                </ProjectsHeadingContainer>
                 <ProjectsGrid>
                     {/* Replace this part with a map function? */}
                     <ProjectCard>
@@ -257,7 +276,7 @@ const Projects = ({ id }) => {
                             </ProjectHeaderContainer>
 
                             <ProjectDescription>
-                                Studied and implemented a comprehensive set of data structures in Python as part of my computer science curriculum. This collection encompasses essential structures 
+                                Studied and implemented a comprehensive set of data structures in Python as part of my computer science curriculum. This collection encompasses essential structures
                                 such as Linked Lists, Stacks, and HashMaps, highlighting my hands-on experience with core algorithms and practical data manipulation techniques.
                                 {/* Enhanced the Spotipy Python library's documentation by creating "authorization.rst" in the
                                 /docs directory, which features clear explanations and practical examples of the Authorization
