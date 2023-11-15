@@ -2,28 +2,29 @@
 import React from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-okaidia.css'; // This is the theme
-// Import additional languages if needed
 import 'prismjs/components/prism-jsx.min';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'; // Styles for line numbers
 import 'prismjs/components/prism-python';
-
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 const CodeEditorContainer = styled.div`
-  background-color: ${props => props.theme.card};
-  // background-color: #0f172a;
-  // background-color: #1e293b;
-  border-radius: 5px;
-  padding: 10px;
-  width:570px; // Set your desired width here
-  height: 390px; // Set your desired height here
-  overflow: hidden; 
-  text-align: left !important;
-  position: relative;
-  /* Add more styling as needed */
-  // border:.5px solid ${props => props.theme.textGrey};
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+background-color: ${props => props.theme.card};
+border-radius: 5px;
+padding: 10px;
+width:570px; 
+height: 390px; 
+overflow: hidden; 
+text-align: left !important;
+position: relative;
+/* Add more styling as needed */
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+${media.lessThan("medium")`
+width: 100%; // Adjusted for smaller screens
+// Other responsive styles if necessary
+`};
 `;
 
 const CodeHeader = styled.div`
@@ -90,6 +91,9 @@ const StyledPre = styled.pre`
 
   /* Force the scrollbar to be visible */
 
+  ${media.lessThan("medium")`
+  padding-left: 15px !important; // Adjust padding for smaller screens
+`};
 
 `;
 

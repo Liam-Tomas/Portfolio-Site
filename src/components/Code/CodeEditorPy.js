@@ -2,12 +2,11 @@
 import React from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-okaidia.css'; // This is the theme
-// Import additional languages if needed
 import 'prismjs/components/prism-jsx.min';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'; // Styles for line numbers
 import 'prismjs/components/prism-python';
-
+import media from 'styled-media-query';
 import styled from 'styled-components';
 
 const CodeEditorContainer = styled.div`
@@ -21,6 +20,10 @@ const CodeEditorContainer = styled.div`
   position: relative;
   /* Add more styling as needed */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  ${media.lessThan("medium")`
+    width: 100%; // Adjusted for smaller screens
+  `};
 
 `;
 

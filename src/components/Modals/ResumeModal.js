@@ -2,8 +2,6 @@ import React from 'react';
 import Modal from './Modal';
 import styled from 'styled-components';
 import Button from '../Button'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
 const ResumeContent = styled.div`
   width: 100%;

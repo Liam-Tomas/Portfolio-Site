@@ -1,156 +1,12 @@
-// import React from 'react';
-// import styled from 'styled-components';
-// import Button from './Button';
-
-
-// // Styled Components
-// const HomeContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 80vh;
-//   justify-content: center;
-//   text-align: left;
-//   color: black;
-//   background-color: ${props => props.theme.background};
-//   color: ${props => props.theme.text};
-//   display: flex;
-//   flex-direction: column;
-//   max-width: 950px;  // This will make sure the container doesn't expand beyond 1000px
-//   margin: 0 auto;     // This will center the container
-//   padding: 0 20px;    // This will add a little padding to ensure content doesn't touch the edges on smaller screens
-
-// `;
-
-// const MyName = styled.h1`
-//   font-size: 4.8rem;
-//   font-weight: 600;
-//   margin: 0px 0px;
-// `;
-
-// const SubTitle = styled.h2`
-//   font-size: 2.6rem;
-//   font-weight: 400;
-// `;
-
-// const ButtonContainer = styled.div`
-//   margin-top: 20px; 
-//   & > Button {
-//     margin-right: 10px;
-
-//     &:last-child {
-//         margin-right: 0; // to remove margin from the last button
-//     }
-// }
-// `;
-
-// // Home Component
-// const Home = () => {
-//   return (
-//     <HomeContainer>
-//       <SubTitle>Hi, my name is</SubTitle>
-//       <MyName>Liam Armstrong.</MyName>
-//       <SubTitle>I'm a Software Developer from the Bay Area.</SubTitle>
-//       <ButtonContainer>
-//       <Button>Github</Button>
-//         <Button btnColor="#6000cb">LinkedIn</Button>
-//         <Button btnColor='#F67796'>Resume</Button>
-//       </ButtonContainer>
-//     </HomeContainer>
-//   );
-// };
-
-// export default Home;
-
-
-// import React from 'react';
-// import styled from 'styled-components';
-// import Button from './Button';
-
-
-// // Styled Components
-// const HomeContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 75vh;
-//   justify-content: center;
-//   text-align: left;
-//   color: black;
-//   background-color: ${props => props.theme.background};
-//   color: ${props => props.theme.text};
-//   display: flex;
-//   flex-direction: column;
-//   max-width: 850px;  // This will make sure the container doesn't expand beyond 1000px
-//   margin: 0 auto;     // This will center the container
-//   padding: 0 20px;    // This will add a little padding to ensure content doesn't touch the edges on smaller screens
-
-// `;
-
-// const MyName = styled.h1`
-//   font-size: 5.5rem;
-//   font-weight: 400;
-//   margin-bottom:15px;
-
-// `;
-
-// const HeaderTitle = styled.h2`
-//   font-size: 5.5rem;
-//   font-weight: 400;
-//   margin: 0px 0px;
-
-// `
-
-// const SubTitle = styled.h2`
-//   font-size: 1.6rem;
-//   font-weight: 400;
-//   margin-bottom:25px;
-// `;
-
-// const BoldText = styled.span`
-//   font-weight: 700; // This will make the text inside this component bold
-// `;
-
-// const ButtonContainer = styled.div`
-//   & > Button {
-//     margin-right: 10px;
-
-//     &:last-child {
-//         margin-right: 0; // to remove margin from the last button
-//     }
-// }
-// `;
-
-// // Home Component
-// const Home = () => {
-//   return (
-//     <HomeContainer>
-//       <HeaderTitle>Hi, my</HeaderTitle>
-//       <MyName>name is <BoldText>Liam.</BoldText></MyName>
-//       <SubTitle>I'm a Software Engineer, Data Analyst and CS student<p>from the SF Bay Area.</p></SubTitle>
-//       <ButtonContainer>
-//       <Button>Github</Button>
-//         <Button btnColor="#0ea5e9">LinkedIn</Button>
-//         <Button btnColor='#3b82f6'>Resume</Button>
-//       </ButtonContainer>
-//     </HomeContainer>
-//   );
-// };
-
-// export default Home;
-
-
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-// import { Button } from 'flowbite-react';
 import ContactModal from '../Modals/ContactModal'; // Import the ContactModal
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from 'styled-components';
 import media from 'styled-media-query';
 
-
-
-// Styled Components
 const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -167,8 +23,9 @@ const HomeContainer = styled.div`
 
   ${media.lessThan("medium")`
       text-align: center;
+      max-height: 100%;
       min-height: 100vh;
-
+      padding: 0 50px; // Reduced padding on smaller screens
   `};
 
   ${media.greaterThan("large")`
@@ -193,7 +50,7 @@ const MyName = styled.h1`
 
   color: ${props => props.theme.text};
   ${media.lessThan("medium")`
-      font-size:3.1rem;
+    font-size:2.5rem;
   `};
 `;
 
@@ -205,7 +62,7 @@ line-height: .9;
     font-size:3.8rem;
     // letter-spacing: -1px;
   ${media.lessThan("medium")`
-      font-size:3.1rem;
+      font-size:2.5rem;
   `};
 `;
 
@@ -217,7 +74,9 @@ const Description = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: ${props => props.theme.textGrey};
   font-family: 'Inter', sans-serif;
-
+  ${media.lessThan("medium")`
+    font-size:1rem;
+  `};
 `
 
 const BoldText = styled.span`
@@ -235,14 +94,18 @@ const ButtonContainer = styled.div`
         margin-right: 0; // to remove margin from the last button
     }
   }
+
+  ${media.lessThan("medium")`
+  display:flex;
+  flex-direction: column;`};
+
+  gap: 15px;
 `;
 
 const StyledButton = styled.button`
   background-color: ${props => props.btnColor || props.theme.btn2};
 `
 
-
-// Home Component
 function Home({ id }) {
   const theme = useTheme();
   const [isContactModalOpen, setContactModalOpen] = useState(false);

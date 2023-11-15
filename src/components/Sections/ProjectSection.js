@@ -1,9 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import recipeIMG from '../../images/recipeappIMG.jpg';
-import ecommerceIMG from '../../images/ecommerceIMG.jpg'
-import spotifyIMG from '../../images/spotifyIMG.jpg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '../Button'
 import media from 'styled-media-query';
 import { useTheme } from 'styled-components';
@@ -11,7 +7,6 @@ import JSCode from '../Code/RecipeCode'; // Adjust the import path as necessary
 import EcommerceCode from '../Code/EcommerceCode';
 import AlgoCode from '../Code/AlgoCode';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-scroll';
 
 const ProjectsSection = styled.section`
     background-color: ${props => props.theme.background};
@@ -25,6 +20,12 @@ const Container = styled.div`
     max-width: 1180px;  // This will make sure the container doesn't expand beyond 1000px
     margin: 0 auto;     // This will center the container
     padding: 0 20px;    // This will add a little padding to ensure content doesn't touch the edges on smaller screens
+   
+    ${media.lessThan("medium")`
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+`};
     `;
 
 const ProjectsHeading = styled.h1`
@@ -32,7 +33,6 @@ const ProjectsHeading = styled.h1`
     font-weight: 700;
     margin-bottom: 70px;
     color: ${props => props.theme.text};
-
 `;
 
 const ProjectsGrid = styled.div`
@@ -44,7 +44,6 @@ const ProjectsGrid = styled.div`
 const ProjectCard = styled.div`
     padding: 20px 0px;
     gap:60px;
-    // box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     display: flex;
     position: relative; // Added to contain the pseudo-element within the card
@@ -66,7 +65,10 @@ const ProjectCard = styled.div`
     ${media.lessThan("medium")`
         flex-direction: column;
         align-content: center;
-    `};
+        justify-content: center;
+        text-align:center;
+
+        `};
 `;
 
 const ProjectTitle = styled.h3`
@@ -74,6 +76,10 @@ const ProjectTitle = styled.h3`
     font-weight: 600;
     line-height:1.2;
     color: ${props => props.theme.text};
+
+    ${media.lessThan("medium")`
+        font-size: 2.5rem;
+    `};
 `;
 
 const ProjectDescription = styled.p`
@@ -81,8 +87,7 @@ const ProjectDescription = styled.p`
     font-weight: 400;
     color: ${props => props.theme.textGrey};
 
-    ${media.lessThan("medium")`
-        width: 70%;    `};
+
     `;
 
 const MainContent = styled.div`
@@ -90,13 +95,6 @@ const MainContent = styled.div`
     gap:30px;
     flex-direction: column;
 `
-
-// const TechIcon = styled(FontAwesomeIcon)`
-//     font-size: 45px;   // Adjust the size as needed
-//     margin-right: 20px; // Spacing between icons
-//     margin-top: 5px;
-//     color: ${props => props.theme.primary};
-//     `;
 
 const SeeMoreContainer = styled.div`
     display:flex;
@@ -108,6 +106,9 @@ const TechContainer = styled.div`
     align-items: center;
     gap: 10px;
 
+    ${media.lessThan("medium")`
+    justify-content: center;
+    `};
     `
 
 const TechIcon = styled.div`
@@ -129,6 +130,10 @@ const ButtonContainer = styled.div`
     color: ${props => props.theme.primary};
     // margin-left: 20px;
     font-weight:500;
+
+    ${media.lessThan("medium")`
+    justify-content: center;
+    `};
 `
 
 const Header = styled.div`
