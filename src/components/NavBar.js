@@ -81,28 +81,37 @@ const StyledLink = styled(Link)`
 const HamburgerMenuIcon = styled.div`
   display: none;
   cursor: pointer;
-
   ${media.lessThan("medium")`
-    display: block;
+  
+    display: flex; // Change 'display' to 'flex'
+    justify-content: flex-end; // Add 'justify-content' property
+    cursor: pointer;
   `};
 
   // Style your hamburger icon here
 `;
 
+const HamburgerMenuContainer = styled.div`
+  display: flex;
+  justify-content: flex-end; // Align the icon to the right side
+`;
+
+
 const MobileNavModal = styled.div`
   display: none;
   position: fixed;
-  left: 0; // Change 'right' to 'left'
+  right: 0;
   top: 0;
   width: 60%; // Adjust the width as needed
   height: 100%;
   background: ${props => props.theme.card};
   z-index: 60;
-  transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(-100%)'}; // Corrected 'translateX' values
+  // transform: translateX(100%);
   transition: transform 0.2s ease-in-out;
 
   ${media.lessThan("medium")`
     display: block;
+    transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   `};
 `;
 
@@ -189,53 +198,56 @@ function NavBar({ theme, toggleTheme, setModalOpen }) {
 
   return (
     <StyledNav shadow={hasScrolled} style={{ top: visible ? '0' : '-95px', transition: 'top 0.3s ease-in-out' }}>
+      <HamburgerMenuContainer>
+        <HamburgerMenuIcon onClick={toggleMenu}>
+          <FontAwesomeIcon icon={faBars} fontSize={'2rem'} />
+        </HamburgerMenuIcon>
+      </HamburgerMenuContainer>
+      <Overlay show={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
+
+      <MobileNavModal isOpen={isMenuOpen}>
+        <ModalHeader>
+          <Toggle theme={theme} toggleTheme={toggleTheme} />
+          <Button onClick={() => { setModalOpen(true); closeMobileNav(); }}>Resume</Button>
+        </ModalHeader>
+        <div>
+          <MobileNavStyledLink
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={closeMobileNav}
+          >
+            Home
+          </MobileNavStyledLink>
+          <MobileNavStyledLink
+            to="work"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={closeMobileNav}
+          >
+            Work
+          </MobileNavStyledLink>
+          <MobileNavStyledLink
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={closeMobileNav}
+          >
+            Contact
+          </MobileNavStyledLink>
+        </div>
+      </MobileNavModal>
       <Container>
         <Logo>
           <Toggle theme={theme} toggleTheme={toggleTheme} />
         </Logo>
-        <HamburgerMenuIcon onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faBars} fontSize={'2rem'} />
-        </HamburgerMenuIcon>
-        <Overlay show={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
 
-        <MobileNavModal isOpen={isMenuOpen}>
-          <ModalHeader>
-            <Toggle theme={theme} toggleTheme={toggleTheme} />
-            <Button onClick={() => { setModalOpen(true); closeMobileNav(); }}>Resume</Button>
-          </ModalHeader>
-          <div>
-            <MobileNavStyledLink
-              to="home"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              onClick={closeMobileNav}
-            >
-              Home
-            </MobileNavStyledLink>
-            <MobileNavStyledLink
-              to="work"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              onClick={closeMobileNav}
-            >
-              Work
-            </MobileNavStyledLink>
-            <MobileNavStyledLink
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              onClick={closeMobileNav}
-            >
-              Contact
-            </MobileNavStyledLink>
-          </div>
-        </MobileNavModal>
         <NavList>
           <li>
             <StyledLink
