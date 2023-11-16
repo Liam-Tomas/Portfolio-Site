@@ -92,18 +92,17 @@ const HamburgerMenuIcon = styled.div`
 const MobileNavModal = styled.div`
   display: none;
   position: fixed;
-  right: 0;
+  left: 0; // Change 'right' to 'left'
   top: 0;
   width: 60%; // Adjust the width as needed
   height: 100%;
   background: ${props => props.theme.card};
   z-index: 60;
-  transform: translateX(100%);
+  transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(-100%)'}; // Corrected 'translateX' values
   transition: transform 0.2s ease-in-out;
 
   ${media.lessThan("medium")`
     display: block;
-    transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   `};
 `;
 
