@@ -5,15 +5,12 @@ import Button from '../Button'
 import media from 'styled-media-query';
 
 const ResumeContentWrapper = styled.div`
-  margin: 10px auto; /* Apply margin to both top and bottom */
-  max-width: 1000px;
-  max-height: 90vh;
 `;
 
 const ResumeContent = styled.div`
   width: 100%;
   max-width: 1000px;
-  margin: 10px auto;
+  margin: 0px auto;
   padding: 2.5rem 3rem;
   color: ${props => props.theme.text};
   // box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
