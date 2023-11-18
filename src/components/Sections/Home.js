@@ -109,9 +109,9 @@ function Home({ id }) {
     <HomeContainer id={id}>
       <HeaderTitle>Hi, my name is</HeaderTitle>
       <MyName>Liam Armstrong</MyName>
-      <SubTitle>Data & Web Enthusiast</SubTitle>
+      <SubTitle>Data & Web Engineer</SubTitle>
       <Description>
-        In my Computer Science journey at Oregon State, I've developed a keen interest in both software engineering and data analysis. My goal?
+        On my Computer Science journey at Oregon State, I've developed a keen interest in both software engineering and data analysis. My goal?
         To craft innovative software and insightful data-driven narratives. Check out some of my work below!
       </Description>
       <ButtonContainer>

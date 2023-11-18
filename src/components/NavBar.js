@@ -207,8 +207,8 @@ function NavBar({ theme, toggleTheme, setModalOpen }) {
 
       <MobileNavModal isOpen={isMenuOpen}>
         <ModalHeader>
-          <Toggle theme={theme} toggleTheme={toggleTheme} />
           <Button onClick={() => { setModalOpen(true); closeMobileNav(); }}>Resume</Button>
+          <Toggle theme={theme} toggleTheme={toggleTheme} />
         </ModalHeader>
         <div>
           <MobileNavStyledLink

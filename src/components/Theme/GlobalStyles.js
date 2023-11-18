@@ -1,8 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 export const GlobalStyles = createGlobalStyle`
     html {
-        font-size:16px;
-
+        font-size:16px;s
     }
     body {
         font-family: 'Bitter', sans-serif;

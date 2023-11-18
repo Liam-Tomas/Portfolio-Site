@@ -183,6 +183,7 @@ const ResumeModal = ({ isOpen, onClose }) => {
           </EntrySubtitle>
           <EntrySubtitle>
             <b>Volunteer</b>: Experience at home and abroad for various organizations including Amnesty International & more.
+            <div><br/></div>
           </EntrySubtitle>
           <EntryDescription> </EntryDescription>
 

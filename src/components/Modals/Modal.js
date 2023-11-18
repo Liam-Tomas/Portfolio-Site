@@ -13,7 +13,6 @@ const ModalOverlay = styled.div`
   align-items: center;
   z-index: 2000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  
 `;
 
 const ModalContent = styled.div`
