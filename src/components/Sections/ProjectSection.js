@@ -196,7 +196,7 @@ const Projects = ({ id }) => {
                         {/* <ProjectImage src={recipeIMG} alt="Project Name" /> */}
                         <MainContent>
                             <ProjectHeaderContainer>
-                                <ProjectTitle>Recipe Finder CRUD App</ProjectTitle>
+                                <ProjectTitle>Recipe Full Stack App</ProjectTitle>
                                 <TechContainer>
                                     <TechIcon>React</TechIcon>
                                     <TechIcon>Javascript</TechIcon>
@@ -239,7 +239,7 @@ const Projects = ({ id }) => {
                     <ProjectCard>
                         <MainContent>
                             <ProjectHeaderContainer>
-                                <ProjectTitle>Ecommerce Analysis</ProjectTitle>
+                                <ProjectTitle>Ecommerce Data Analysis</ProjectTitle>
                                 <TechContainer>
                                     <TechIcon>MySQL</TechIcon>
                                     <TechIcon>Python</TechIcon>
