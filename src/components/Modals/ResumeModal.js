@@ -175,8 +175,6 @@ const ResumeModal = ({ isOpen, onClose }) => {
           <SectionHeader>ADDITIONAL</SectionHeader>
           <EntryTitle></EntryTitle>
           <EntrySubtitle><b>Languages</b>: Javascript, Python, SQL, CSS, C++
-            Libraries/Frameworks/Tools: Pandas, Express.js, Node.js, Mongodb, Material UI, Node, Git/Github, Excel, Jira, PostgreSQL, MySQL, Tableau, PowerBI
-            Volunteer: Experience at home and abroad for various organizations including Amnesty International & more.
           </EntrySubtitle>
           <EntrySubtitle>
             <b>Libraries/Frameworks/Tools</b>: Pandas, Express.js, Node.js, Mongodb, Material UI, Node, Git/Github, Excel, Jira, PostgreSQL, MySQL, Tableau, PowerBI
