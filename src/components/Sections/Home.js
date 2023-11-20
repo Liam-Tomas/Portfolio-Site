@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import ContactModal from '../Modals/ContactModal'; // Import the ContactModal
+import ContactModal from '../Modals/ContactModal';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from 'styled-components';
 import media from 'styled-media-query';
+import customMedia from '../breakpoint'
+
 
 const HomeContainer = styled.div`
   display: flex;
@@ -26,8 +28,9 @@ const HomeContainer = styled.div`
       padding: 0 1.8rem; // Reduced padding on smaller screens
       `};
 
-  ${media.greaterThan("large")`
-  `};
+      ${customMedia.greaterThan('extraLarge')`
+          max-width: 1080px;
+      `};
 
 `;
 
@@ -42,18 +45,25 @@ const HeaderTitle = styled.h2`
     font-size:1rem;
   `};
   
-`
+  ${customMedia.greaterThan('extraLarge')`
+      font-size: 1.3em;
+  `};
+
+`;
 
 const MyName = styled.h1`
   font-size:3.9rem;
   line-height: 1;
   font-weight: 900;
-  // letter-spacing: -1px;
-
   color: ${props => props.theme.text};
+
   ${media.lessThan("medium")`
     font-size:2.4rem;
   `};
+
+  ${customMedia.greaterThan('extraLarge')`
+    font-size: 4.7em;
+`};
 `;
 
 const SubTitle = styled.h2`
@@ -66,8 +76,12 @@ const SubTitle = styled.h2`
   ${media.lessThan("medium")`
       font-size:2.4rem;
   `};
-`;
 
+  ${customMedia.greaterThan('extraLarge')`
+    font-size: 4.7em;
+`};
+
+`;
 
 const Description = styled.div`
   font-size: 1.15rem;
@@ -78,6 +92,11 @@ const Description = styled.div`
   ${media.lessThan("medium")`
     font-size:1rem;
   `};
+
+
+  ${customMedia.greaterThan('extraLarge')`
+    font-size: 1.4em;
+`};
 `
 
 const BoldText = styled.span`
@@ -150,8 +169,6 @@ function Home({ id }) {
 };
 
 export default Home;
-
-
 
 // Currently, I'm diving deep into Computer Science at Oregon State University, with a dual passion for
 // software engineering and data analysis. My goal? Crafting scalable solutions and insightful data-driven narratives.

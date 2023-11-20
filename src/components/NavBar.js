@@ -6,13 +6,14 @@ import ResumeModal from './Modals/ResumeModal';
 import media from 'styled-media-query';
 import { Link } from 'react-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faLightbulb } from '@fortawesome/free-solid-svg-icons'; // Import the flashlight icon
+import Spotlight from './Spotlight'; // Import the Spotlight component
 
 const StyledNav = styled.nav`
   padding: 1.5rem 4rem;
   color: ${props => props.theme.text};
   position: fixed;
-  width: 100%;  // Make sure the navbar spans the full width of the viewport
+  width: 100%;  // Make sure navbar spans full width of viewport
   font-weight:600;
   box-shadow: ${props => (props.shadow ? "0 4px 15px rgba(0, 0, 0, 0.3)" : "none")};
   background-color: ${props => props.theme.backgroundFaded};
@@ -96,7 +97,6 @@ const HamburgerMenuContainer = styled.div`
   justify-content: flex-end; // Align the icon to the right side
 `;
 
-
 const MobileNavModal = styled.div`
   display: none;
   position: fixed;
@@ -147,6 +147,7 @@ function NavBar({ theme, toggleTheme, setModalOpen }) {
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSpotlightOn, setIsSpotlightOn] = useState(false); // State to manage Spotlight visibility
 
   const SCROLL_DELTA = 15;
 
@@ -156,6 +157,11 @@ function NavBar({ theme, toggleTheme, setModalOpen }) {
 
   const closeMobileNav = () => {
     setIsMenuOpen(false);
+  };
+
+  // Function to toggle Spotlight visibility
+  const toggleSpotlight = () => {
+    setIsSpotlightOn(!isSpotlightOn);
   };
 
   useEffect(() => {
@@ -197,98 +203,105 @@ function NavBar({ theme, toggleTheme, setModalOpen }) {
   }, [prevScrollPos]);
 
   return (
-    <StyledNav shadow={hasScrolled} style={{ top: visible ? '0' : '-95px', transition: 'top 0.3s ease-in-out' }}>
-      <HamburgerMenuContainer>
-        <HamburgerMenuIcon onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faBars} fontSize={'2rem'} />
-        </HamburgerMenuIcon>
-      </HamburgerMenuContainer>
-      <Overlay show={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
+    <>
 
-      <MobileNavModal isOpen={isMenuOpen}>
-        <ModalHeader>
-          <Button onClick={() => { setModalOpen(true); closeMobileNav(); }}>Resume</Button>
-          <Toggle theme={theme} toggleTheme={toggleTheme} />
-        </ModalHeader>
-        <div>
-          <MobileNavStyledLink
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            onClick={closeMobileNav}
-          >
-            Home
-          </MobileNavStyledLink>
-          <MobileNavStyledLink
-            to="work"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            onClick={closeMobileNav}
-          >
-            Work
-          </MobileNavStyledLink>
-          <MobileNavStyledLink
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            onClick={closeMobileNav}
-          >
-            Contact
-          </MobileNavStyledLink>
-        </div>
-      </MobileNavModal>
-      <Container>
-        <Logo>
-          <Toggle theme={theme} toggleTheme={toggleTheme} />
-        </Logo>
+      <StyledNav shadow={hasScrolled} style={{ top: visible ? '0' : '-95px', transition: 'top 0.3s ease-in-out' }}>
+        <HamburgerMenuContainer>
+          <HamburgerMenuIcon onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} fontSize={'2rem'} />
+          </HamburgerMenuIcon>
+        </HamburgerMenuContainer>
+        <Overlay show={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
 
-        <NavList>
-          <li>
-            <StyledLink
-              activeClass="active"
+        <MobileNavModal isOpen={isMenuOpen}>
+          <ModalHeader>
+            <Button onClick={() => { setModalOpen(true); closeMobileNav(); }}>Resume</Button>
+            <Toggle theme={theme} toggleTheme={toggleTheme} />
+          </ModalHeader>
+          <div>
+            <MobileNavStyledLink
               to="home"
               spy={true}
               smooth={true}
               offset={-70}
-              duration={500}>
+              duration={500}
+              onClick={closeMobileNav}
+            >
               Home
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink
-              activeClass="active"
+            </MobileNavStyledLink>
+            <MobileNavStyledLink
               to="work"
               spy={true}
               smooth={true}
               offset={-70}
-              duration={500}>
+              duration={500}
+              onClick={closeMobileNav}
+            >
               Work
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink
-              activeClass="active"
+            </MobileNavStyledLink>
+            <MobileNavStyledLink
               to="contact"
               spy={true}
               smooth={true}
               offset={-70}
-              duration={500}>
+              duration={500}
+              onClick={closeMobileNav}
+            >
               Contact
-            </StyledLink>
-          </li>
-          <li>
-            {/* onClick handler is updated to use the prop */}
-            <Button onClick={() => setModalOpen(true)}>Resume</Button>
-          </li>
-        </NavList>
-      </Container>
-    </StyledNav >
+            </MobileNavStyledLink>
+          </div>
+        </MobileNavModal>
+        <Container>
+          <Logo>
+            <Toggle theme={theme} toggleTheme={toggleTheme} />
+          </Logo>
+          <NavList>
+          {/* <Button onClick={toggleSpotlight}>
+            <FontAwesomeIcon icon={faLightbulb} /> 
+          </Button> */}
+            <li>
+              <StyledLink
+                activeClass="active"
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                Home
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink
+                activeClass="active"
+                to="work"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                Work
+              </StyledLink>
+            </li>
+            <li>
+              <StyledLink
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                Contact
+              </StyledLink>
+            </li>
+            <li>
+              {/* onClick handler is updated to use the prop */}
+              <Button onClick={() => setModalOpen(true)}>Resume</Button>
+            </li>
+          </NavList>
+        </Container>
+      </StyledNav >
+      {isSpotlightOn && <Spotlight />} {/* Conditionally render the Spotlight component */}
+    </>
+
   );
 }
 

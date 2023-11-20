@@ -7,12 +7,13 @@ import JSCode from '../Code/RecipeCode'; // Adjust the import path as necessary
 import EcommerceCode from '../Code/EcommerceCode';
 import AlgoCode from '../Code/AlgoCode';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import customMedia from '../breakpoint'
 
 const ProjectsSection = styled.section`
     background-color: ${props => props.theme.background};
     z-index: 1000;
 
-    `;
+`;
 
 const Container = styled.div`
     display: flex;
@@ -22,16 +23,21 @@ const Container = styled.div`
     padding: 0 30px;    // This will add a little padding to ensure content doesn't touch the edges on smaller screens
    
     ${media.lessThan("medium")`
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-`};
-    `;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    `};
+
+    ${customMedia.greaterThan('extraLarge')`
+        max-width: 1300px;  
+    `};
+
+`;
 
 const ProjectsHeadingContainer = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 `;
 
 const ProjectsHeading = styled.h1`
@@ -39,13 +45,18 @@ const ProjectsHeading = styled.h1`
     font-weight: 700;
     min-width: 200px;
     color: ${props => props.theme.text};
-    ${media.lessThan("medium")`
+
+    ${media.lessThan("huge")`
         font-size: 2.3rem;
         min-width: 160px;
         margin-right: 15px; // Add some space between the heading and the line
-
-
     `};
+
+    ${customMedia.greaterThan('extraLarge')`
+        font-size: 2.6rem;
+    `};
+
+    
 `;
 
 const HorizontalLine = styled.div`
@@ -55,9 +66,10 @@ const HorizontalLine = styled.div`
     background-color: ${props => props.theme.cardLight}; 
     
     ${media.lessThan("medium")`
-    width: 50%;
-
+        width: 50%;
     `};
+
+
     `;
 
 const ProjectsGrid = styled.div`
@@ -89,10 +101,7 @@ const ProjectCard = styled.div`
 
     ${media.lessThan("medium")`
         flex-direction: column;
-        // align-content: center;
-        // justify-content: center;
-
-        `};
+    `};
 `;
 
 const ProjectTitle = styled.h3`
@@ -100,6 +109,7 @@ const ProjectTitle = styled.h3`
     font-weight: 700;
     line-height:1.2;
     color: ${props => props.theme.text};
+    
     ${media.lessThan("medium")`
         font-size: 1.8rem;
     `};

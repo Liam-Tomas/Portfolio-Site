@@ -20,7 +20,7 @@ const VerticalText = styled.div`
     top: 100%;  // Positions the line directly below the text, so it extends downwards
   }
 
-  ${media.lessThan("medium")`
+  ${media.lessThan("large")`
     display: none;
   `};
 `;

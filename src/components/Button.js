@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ThemeContext } from 'styled-components';
 import media from 'styled-media-query';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import customMedia from './breakpoint'
 
 const StyledButton = styled.button`
   position: relative; 
@@ -13,23 +14,18 @@ const StyledButton = styled.button`
   border-radius: ${props => props.borderRadius || "5px" };
   font-weight: 700;
   border: 1px solid ${props => props.variant === "contained" ? "transparent" : (props.theme.btnColor || props.btnColor || props.theme.primary)};
-  // border-radius: 5px;
   cursor: pointer;
   overflow: hidden; 
   transition: transform 0.1s ease, background-color 0.1s ease, opacity 0.1s ease;
-  box-shadow: rgba(50, 50, 93, 0.1) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;  font-family: 'Inter', sans-serif;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   text-transform: uppercase;
   // Hover effect for the contained variant
   &:hover {
     ${props => props.variant === "contained" && `
-    // background-color: ${props.theme.btnHover};
-    filter: brightness(110%);
+      filter: brightness(110%);
     `}
     ${props => props.variant !== "contained" && `
       background-color: ${props.theme.primaryFaded};
-
     `}
   }
 
@@ -37,14 +33,11 @@ const StyledButton = styled.button`
     transform: scale(0.97);
   }
 
-  ${media.lessThan("medium")`
-    // font-size:1rem;
-    // padding: 8px 16px;
+  // ${customMedia.greaterThan('extraLarge')`
+  //   font-size: 1.1em;
+  // `};
 
-`};
-  
 `;
-
 
 function Button({ children, icon, onClick, btnColor, variant, href, fontSize, customPadding, borderRadius }) {
   const theme = useContext(ThemeContext);
